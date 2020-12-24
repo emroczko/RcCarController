@@ -25,6 +25,7 @@ class ViewController: UIViewController, CommandExecutorDelegate{
     let knobHeight: CGFloat = 100
 
 
+    @IBOutlet weak var connectButton: UIButton!
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
@@ -70,31 +71,25 @@ class ViewController: UIViewController, CommandExecutorDelegate{
     override var shouldAutorotate: Bool {
         return true
     }
-    
-    
-    
    
     @objc func stateChanged(lights: UISwitch) {
         
         if lights.isOn {
             commandExecutor.turnOnLed()
-           // command = stringConvert("ledon")
         } else {
             commandExecutor.turnOffLed()
-           // command = stringConvert("ledoff")
         }
-       // writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
     }
     
-    
-  
-    
     @IBAction func connectToCar(_ sender: Any) {
+        connectingIndicator.startAnimating()
         bluetoothClient.connectToDevice()
+        commandExecutor.bluetoothClient = self.bluetoothClient
+        connectingIndicator.stopAnimating()
+        
         self.connectionLabel.text = "Connected"
         self.connectionLabel.textColor = .green
-        commandExecutor.bluetoothClient = self.bluetoothClient
-        //connectingIndicator.stopAnimating()
+        self.connectButton.setTitle("Reconnect to the car", for: .normal)
     }
 
     func setupViews(){
@@ -107,8 +102,6 @@ class ViewController: UIViewController, CommandExecutorDelegate{
     func setupSteeringKnob(){
         // Add the knob
         originalSteerPositionCGPoint = CGPoint(x: (screenHeight / 5 - knobHeight / 2), y: (screenWidth / 2 - knobWidth/2))
-                                        
-        
         steeringKnobView = SteeringJoystick(frame: CGRect(origin: originalSteerPositionCGPoint, size: CGSize(width: knobWidth, height: knobHeight)))
         steeringKnobView.delegate = commandExecutor
         steeringKnobView.originalPosition = originalSteerPositionCGPoint
