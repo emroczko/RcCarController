@@ -35,13 +35,10 @@ extension BluetoothCommunication: CBCentralManagerDelegate{
        // connectingIndicator.startAnimating()
         if let pname = peripheral.name {
             if pname == "MLT-BT05" {
-//                    self.centralManager.stopScan()
-//
-//                    self.centralManager.connect(peripheral, options: nil)
-//                    self.peripheral = peripheral
-//                self.connectionLabel.text = "Connected"
-//                self.connectionLabel.textColor = .green
-//                connectingIndicator.stopAnimating()
+                    self.centralManager.stopScan()
+                    self.centralManager.connect(peripheral, options: nil)
+                    self.peripheral = peripheral
+                
                 }
             }
         

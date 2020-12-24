@@ -8,10 +8,15 @@
 import UIKit
 import CoreBluetooth
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CommandExecutorDelegate{
+    
+    
     
    
-    var bluetoothClient: BluetoothCommunication
+    weak var commandExecutor: CommandExecutor?
+    var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
+    
+    var centralManager : CBCentralManager!
     
     
     @IBOutlet weak var connectionLabel: UILabel!
@@ -48,7 +53,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        commandExecutor?.delegate = self
         setupAccelerationKnob()
         setupSteeringKnob()
         setupViews()
@@ -66,30 +71,27 @@ class ViewController: UIViewController {
         return true
     }
     
-    func stringConvert(_ str : String) -> [UInt8]{
-
-        let result:[UInt8] = [UInt8](str.utf8)
-        return result
-    }
+    
     
    
     @objc func stateChanged(lights: UISwitch) {
         let command : [UInt8]
         if lights.isOn {
-            command = stringConvert("ledon")
+           // command = stringConvert("ledon")
         } else {
-            command = stringConvert("ledoff")
+           // command = stringConvert("ledoff")
         }
        // writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
     }
     
     
-    
+  
     
     @IBAction func connectToCar(_ sender: Any) {
-        
-       
-        
+        bluetoothClient.connectToDevice()
+        self.connectionLabel.text = "Connected"
+        self.connectionLabel.textColor = .green
+        //connectingIndicator.stopAnimating()
     }
 
     func setupViews(){
@@ -105,37 +107,32 @@ class ViewController: UIViewController {
                                         
         
         steeringKnobView = SteeringJoystick(frame: CGRect(origin: originalSteerPositionCGPoint, size: CGSize(width: knobWidth, height: knobHeight)))
-        steeringKnobView.delegate = self
+        steeringKnobView.delegate = commandExecutor
         steeringKnobView.originalPosition = originalSteerPositionCGPoint
         steeringKnob.center = steeringKnobView.center
         self.view.addSubview(steeringKnobView)
         
     }
     
-    
     func setupAccelerationKnob(){
         originalAccPositionCGPoint = CGPoint(x: (4 * screenHeight / 5 - knobHeight / 3), y: (screenWidth / 2 - knobWidth/2))
                         
         accelerationKnobView = AccelerationJoystick(frame: CGRect(origin: originalAccPositionCGPoint, size: CGSize(width: knobWidth, height: knobHeight)))
-        accelerationKnobView.delegate = self
+        accelerationKnobView.delegate = commandExecutor
         accelerationKnobView.originalPosition = originalAccPositionCGPoint
         accelerationKnob.center = accelerationKnobView.center
         self.view.addSubview(accelerationKnobView)
     }
-    
-    func panAccEnded(_ sender: AccelerationJoystick) {
+    func stopAccelerating() {
         AccelerationJoystick.animate(withDuration: 0.1, animations: {
-            
             self.accelerationKnobView.frame.origin = self.originalAccPositionCGPoint
         })
-        stopAcc()
     }
-    func panSteerEnded(_ sender: SteeringJoystick) {
+    
+    func stopSteering() {
         SteeringJoystick.animate(withDuration: 0.1, animations: {
             self.steeringKnobView.frame.origin = self.originalSteerPositionCGPoint
         })
-        stopSteer()
-        
     }
     
     
