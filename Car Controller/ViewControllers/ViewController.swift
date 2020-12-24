@@ -13,7 +13,7 @@ class ViewController: UIViewController, CommandExecutorDelegate{
     
     
    
-    weak var commandExecutor: CommandExecutor?
+    var commandExecutor: CommandExecutor = CommandExecutor()
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
     
     var centralManager : CBCentralManager!
@@ -53,7 +53,7 @@ class ViewController: UIViewController, CommandExecutorDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        commandExecutor?.delegate = self
+        commandExecutor.delegate = self
         setupAccelerationKnob()
         setupSteeringKnob()
         setupViews()
@@ -75,10 +75,12 @@ class ViewController: UIViewController, CommandExecutorDelegate{
     
    
     @objc func stateChanged(lights: UISwitch) {
-        let command : [UInt8]
+        
         if lights.isOn {
+            commandExecutor.turnOnLed()
            // command = stringConvert("ledon")
         } else {
+            commandExecutor.turnOffLed()
            // command = stringConvert("ledoff")
         }
        // writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
@@ -91,6 +93,7 @@ class ViewController: UIViewController, CommandExecutorDelegate{
         bluetoothClient.connectToDevice()
         self.connectionLabel.text = "Connected"
         self.connectionLabel.textColor = .green
+        commandExecutor.bluetoothClient = self.bluetoothClient
         //connectingIndicator.stopAnimating()
     }
 

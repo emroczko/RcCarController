@@ -10,6 +10,7 @@ import CoreBluetooth
 
 protocol BluetoothCommunicationProtocol{
    func connectToDevice()
+   func writeCommand( withCharacteristic characteristic: CBCharacteristic, withValue value: Data)
 }
 
 class BluetoothCommunication: NSObject, BluetoothCommunicationProtocol{

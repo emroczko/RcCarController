@@ -17,6 +17,8 @@ enum Command: String{
     case reverse50 = "5b"
     case stopSteering = "t"
     case stopAccelerating = "s"
+    case ledOn = "ledon"
+    case ledOff = "ledoff"
 }
 
 

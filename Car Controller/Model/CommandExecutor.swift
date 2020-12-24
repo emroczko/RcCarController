@@ -14,7 +14,7 @@ protocol CommandExecutorDelegate{
 }
 class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     
-    var bluetoothClient  : BluetoothCommunication?
+    var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
     var delegate : CommandExecutorDelegate?
     
     var accelerationKnob = AccelerationJoystick()
@@ -32,7 +32,7 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     }
     
     func sendCommand(_ command: String ){
-        bluetoothClient?.writeCommand(withCharacteristic: txCharacteristic!, withValue: Data(stringConvert(command)))
+        bluetoothClient.writeCommand(withCharacteristic: txCharacteristic!, withValue: Data(stringConvert(command)))
     }
    
     func panAccEnded(_ sender: AccelerationJoystick) {
@@ -58,6 +58,13 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     }
     func turnRight(_ sender: SteeringJoystick){
         sendCommand(Command.right.rawValue)
+    }
+    
+    func turnOnLed(){
+        sendCommand(Command.ledOn.rawValue)
+    }
+    func turnOffLed(){
+        sendCommand(Command.ledOff.rawValue)
     }
     
     
