@@ -15,7 +15,10 @@
 		52BBF695257F1340001858AB /* SteeringJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF694257F1340001858AB /* SteeringJoystick.swift */; };
 		52C78841259418EC00083F69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52C7883F259418EB00083F69 /* Assets.xcassets */; };
 		52C78842259418EC00083F69 /* AccelerationJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C78840259418EB00083F69 /* AccelerationJoystick.swift */; };
-		52E8FFB12580C24000CBC5EF /* Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8FFB02580C24000CBC5EF /* Bluetooth.swift */; };
+		52C7884525941BE300083F69 /* BluetoothCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7884425941BE300083F69 /* BluetoothCommunication.swift */; };
+		52C7884D259426BC00083F69 /* BluetoothCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7884C259426BC00083F69 /* BluetoothCommands.swift */; };
+		52C788502594295D00083F69 /* CommandExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C7884F2594295D00083F69 /* CommandExecutor.swift */; };
+		52E8FFB12580C24000CBC5EF /* BluetoothCommunication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E8FFB02580C24000CBC5EF /* BluetoothCommunication+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +32,10 @@
 		52BBF694257F1340001858AB /* SteeringJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteeringJoystick.swift; sourceTree = "<group>"; };
 		52C7883F259418EB00083F69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52C78840259418EB00083F69 /* AccelerationJoystick.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccelerationJoystick.swift; sourceTree = "<group>"; };
-		52E8FFB02580C24000CBC5EF /* Bluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bluetooth.swift; sourceTree = "<group>"; };
+		52C7884425941BE300083F69 /* BluetoothCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothCommunication.swift; sourceTree = "<group>"; };
+		52C7884C259426BC00083F69 /* BluetoothCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothCommands.swift; sourceTree = "<group>"; };
+		52C7884F2594295D00083F69 /* CommandExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandExecutor.swift; sourceTree = "<group>"; };
+		52E8FFB02580C24000CBC5EF /* BluetoothCommunication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BluetoothCommunication+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +68,53 @@
 		52BBF675257EEF54001858AB /* Car Controller */ = {
 			isa = PBXGroup;
 			children = (
-				52C78840259418EB00083F69 /* AccelerationJoystick.swift */,
+				52C7885725942A4400083F69 /* Storyboards */,
+				52C7885625942A3800083F69 /* Others */,
+				52C78854259429F500083F69 /* ViewControllers */,
+				52C78852259429E400083F69 /* Model */,
 				52C7883F259418EB00083F69 /* Assets.xcassets */,
-				52BBF676257EEF54001858AB /* AppDelegate.swift */,
-				52BBF678257EEF54001858AB /* SceneDelegate.swift */,
-				52BBF67A257EEF54001858AB /* ViewController.swift */,
-				52BBF67C257EEF54001858AB /* Main.storyboard */,
-				52BBF681257EEF55001858AB /* LaunchScreen.storyboard */,
 				52BBF684257EEF55001858AB /* Info.plist */,
-				52BBF694257F1340001858AB /* SteeringJoystick.swift */,
-				52E8FFB02580C24000CBC5EF /* Bluetooth.swift */,
 			);
 			path = "Car Controller";
+			sourceTree = "<group>";
+		};
+		52C78852259429E400083F69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52C78840259418EB00083F69 /* AccelerationJoystick.swift */,
+				52BBF694257F1340001858AB /* SteeringJoystick.swift */,
+				52E8FFB02580C24000CBC5EF /* BluetoothCommunication+Extension.swift */,
+				52C7884425941BE300083F69 /* BluetoothCommunication.swift */,
+				52C7884C259426BC00083F69 /* BluetoothCommands.swift */,
+				52C7884F2594295D00083F69 /* CommandExecutor.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		52C78854259429F500083F69 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				52BBF67A257EEF54001858AB /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		52C7885625942A3800083F69 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				52BBF676257EEF54001858AB /* AppDelegate.swift */,
+				52BBF678257EEF54001858AB /* SceneDelegate.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		52C7885725942A4400083F69 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				52BBF67C257EEF54001858AB /* Main.storyboard */,
+				52BBF681257EEF55001858AB /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,10 +189,13 @@
 			files = (
 				52BBF695257F1340001858AB /* SteeringJoystick.swift in Sources */,
 				52BBF67B257EEF54001858AB /* ViewController.swift in Sources */,
+				52C7884D259426BC00083F69 /* BluetoothCommands.swift in Sources */,
 				52BBF677257EEF54001858AB /* AppDelegate.swift in Sources */,
+				52C7884525941BE300083F69 /* BluetoothCommunication.swift in Sources */,
 				52C78842259418EC00083F69 /* AccelerationJoystick.swift in Sources */,
-				52E8FFB12580C24000CBC5EF /* Bluetooth.swift in Sources */,
+				52E8FFB12580C24000CBC5EF /* BluetoothCommunication+Extension.swift in Sources */,
 				52BBF679257EEF54001858AB /* SceneDelegate.swift in Sources */,
+				52C788502594295D00083F69 /* CommandExecutor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

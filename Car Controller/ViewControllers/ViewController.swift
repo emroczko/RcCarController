@@ -8,10 +8,10 @@
 import UIKit
 import CoreBluetooth
 
-class ViewController: UIViewController, SteeringDelegate, AccelerationDelegate {
+class ViewController: UIViewController {
     
-    var centralManager : CBCentralManager!
-    var peripheral : CBPeripheral?
+   
+    var bluetoothClient: BluetoothCommunication
     
     
     @IBOutlet weak var connectionLabel: UILabel!
@@ -49,8 +49,6 @@ class ViewController: UIViewController, SteeringDelegate, AccelerationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-       
         setupAccelerationKnob()
         setupSteeringKnob()
         setupViews()
@@ -82,7 +80,7 @@ class ViewController: UIViewController, SteeringDelegate, AccelerationDelegate {
         } else {
             command = stringConvert("ledoff")
         }
-        writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
+       // writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
     }
     
     
@@ -90,7 +88,7 @@ class ViewController: UIViewController, SteeringDelegate, AccelerationDelegate {
     
     @IBAction func connectToCar(_ sender: Any) {
         
-        centralManager = CBCentralManager(delegate: self, queue: nil)
+       
         
     }
 
@@ -139,43 +137,7 @@ class ViewController: UIViewController, SteeringDelegate, AccelerationDelegate {
         stopSteer()
         
     }
-    func stopAcc(){
-        
-        let command : [UInt8]
-        command = stringConvert("s")
-       writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
-        
-    }
-    func stopSteer(){
-        
-        let command : [UInt8]
-        command = stringConvert("t")
-       writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
-        
-    }
-    func accelerate(_ sender: AccelerationJoystick){
-        let command : [UInt8]
-        command = stringConvert("g")
-       writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
-    }
     
-    func reverse(_ sender: AccelerationJoystick){
-        let command : [UInt8]
-        command = stringConvert("b")
-       writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
-    }
-    
-    func turnLeft(_ sender: SteeringJoystick){
-        let command : [UInt8]
-        command = stringConvert("left")
-       writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
-    }
-    
-    func turnRight(_ sender: SteeringJoystick){
-        let command : [UInt8]
-        command = stringConvert("right")
-       writeCommand( withCharacteristic: txCharacteristic!, withValue: Data(command))
-    }
     
     
     

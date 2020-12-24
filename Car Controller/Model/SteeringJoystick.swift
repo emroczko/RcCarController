@@ -9,7 +9,7 @@ import UIKit
 
 protocol SteeringDelegate {
     func panSteerEnded(_ sender: SteeringJoystick)
-    func turnLeft(_ sender: SteeringJoystick)
+    func turnLeft()
     func turnRight(_ sender: SteeringJoystick)
 }
 
@@ -47,8 +47,8 @@ class SteeringJoystick: UIView {
         } else {
             self.center = getNewCoords(translation)
             if(translation.x < 0){
-                delegate?.turnLeft(self)
-            }
+                delegate?.turnLeft()
+            
             else{
                 delegate?.turnRight(self)
             }
