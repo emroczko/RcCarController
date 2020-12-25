@@ -11,6 +11,9 @@ import CoreBluetooth
 
 class ConnectingViewController: UIViewController{
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var connectionLabel: UILabel!
+    
     var commandExecutor: CommandExecutor = CommandExecutor()
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
     var centralManager : CBCentralManager!
@@ -18,6 +21,7 @@ class ConnectingViewController: UIViewController{
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        loadingIndicator.hidesWhenStopped = true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -28,20 +32,32 @@ class ConnectingViewController: UIViewController{
         }
     }
     
+    
     @IBAction func connectToCar(_ sender: Any) {
+        loadingIndicator.startAnimating()
         bluetoothClient.connectToDevice()
         commandExecutor.bluetoothClient = self.bluetoothClient
-        if bluetoothClient.isConnected {
-            self.connectionLabel.text = "Connected"
-            self.connectionLabel.textColor = .green
+        self.connectionLabel.text = "Connecting..."
+        self.connectionLabel.textColor = .gray
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
-        }else {
-            self.connectionLabel.text = "Can't connect to device. Try again!"
-            self.connectionLabel.textColor = .red
+            if self.bluetoothClient.isConnected {
+                self.connectionLabel.text = "Connected"
+                self.connectionLabel.textColor = .green
+               
+                self.performSegue(withIdentifier: "connectSegue", sender: nil)
+                self.loadingIndicator.stopAnimating()
+            }else {
+               
+                self.loadingIndicator.stopAnimating()
+                self.connectionLabel.text = "Can't connect to device. Try again!"
+                self.connectionLabel.textColor = .red
+                }
         }
+        
     }
     
-    @IBOutlet weak var connectionLabel: UILabel!
+    
     
     
 }

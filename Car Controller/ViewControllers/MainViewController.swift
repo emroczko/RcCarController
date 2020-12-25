@@ -36,18 +36,15 @@ class MainViewController: UIViewController, CommandExecutorDelegate{
     
     @IBOutlet weak var steeringKnob: UIImageView!
     @IBOutlet weak var accelerationKnob: UIImageView!
-    
-    @IBOutlet weak var connectingIndicator: UIActivityIndicatorView!
-    
-    @IBOutlet weak var lights: UISwitch!
-    
-    
-    @IBOutlet weak var acceleratingView: UIView!
-    
-    @IBOutlet weak var steeringView: UIView!
-    
     @IBOutlet weak var steerArrows: UIImageView!
     @IBOutlet weak var accelerateArrows: UIImageView!
+    
+    @IBOutlet weak var connectingIndicator: UIActivityIndicatorView!
+
+    @IBOutlet weak var acceleratingView: UIView!
+    @IBOutlet weak var steeringView: UIView!
+    
+
     
 
     
@@ -59,10 +56,20 @@ class MainViewController: UIViewController, CommandExecutorDelegate{
         setupSteeringKnob()
         setupViews()
         
-        lights.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
+        
         let value = UIInterfaceOrientation.landscapeLeft.rawValue
             UIDevice.current.setValue(value, forKey: "orientation")
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let vc = segue.destination as? LightsViewController
+        {
+            vc.bluetoothClient = self.bluetoothClient
+            vc.commandExecutor = self.commandExecutor
+        }
+    }
+    
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeRight
@@ -72,14 +79,7 @@ class MainViewController: UIViewController, CommandExecutorDelegate{
         return true
     }
    
-    @objc func stateChanged(lights: UISwitch) {
-        
-        if lights.isOn {
-            commandExecutor.turnOnLed()
-        } else {
-            commandExecutor.turnOffLed()
-        }
-    }
+    
     
     @IBAction func connectToCar(_ sender: Any) {
         connectingIndicator.startAnimating()

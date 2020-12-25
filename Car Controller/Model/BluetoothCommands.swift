@@ -19,6 +19,9 @@ enum Command: String{
     case stopAccelerating = "s"
     case ledOn = "ledon"
     case ledOff = "ledoff"
+    case allOn = "allOn"
+    case allOf = "allOff"
+    
 }
 
 
