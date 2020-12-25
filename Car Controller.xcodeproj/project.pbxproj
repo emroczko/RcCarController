@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52023DCF2595F82E008CD560 /* ConnectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023DCE2595F82E008CD560 /* ConnectingViewController.swift */; };
+		52023DD32596157F008CD560 /* LightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52023DD22596157F008CD560 /* LightsViewController.swift */; };
 		52BBF677257EEF54001858AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF676257EEF54001858AB /* AppDelegate.swift */; };
 		52BBF679257EEF54001858AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF678257EEF54001858AB /* SceneDelegate.swift */; };
-		52BBF67B257EEF54001858AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF67A257EEF54001858AB /* ViewController.swift */; };
+		52BBF67B257EEF54001858AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF67A257EEF54001858AB /* MainViewController.swift */; };
 		52BBF67E257EEF54001858AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BBF67C257EEF54001858AB /* Main.storyboard */; };
 		52BBF683257EEF55001858AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52BBF681257EEF55001858AB /* LaunchScreen.storyboard */; };
 		52BBF695257F1340001858AB /* SteeringJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BBF694257F1340001858AB /* SteeringJoystick.swift */; };
@@ -22,10 +24,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52023DCE2595F82E008CD560 /* ConnectingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectingViewController.swift; sourceTree = "<group>"; };
+		52023DD22596157F008CD560 /* LightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightsViewController.swift; sourceTree = "<group>"; };
 		52BBF673257EEF54001858AB /* Car Controller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Car Controller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52BBF676257EEF54001858AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52BBF678257EEF54001858AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		52BBF67A257EEF54001858AB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52BBF67A257EEF54001858AB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		52BBF67D257EEF54001858AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		52BBF682257EEF55001858AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52BBF684257EEF55001858AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +98,9 @@
 		52C78854259429F500083F69 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				52BBF67A257EEF54001858AB /* ViewController.swift */,
+				52BBF67A257EEF54001858AB /* MainViewController.swift */,
+				52023DCE2595F82E008CD560 /* ConnectingViewController.swift */,
+				52023DD22596157F008CD560 /* LightsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -187,10 +193,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52023DD32596157F008CD560 /* LightsViewController.swift in Sources */,
 				52BBF695257F1340001858AB /* SteeringJoystick.swift in Sources */,
-				52BBF67B257EEF54001858AB /* ViewController.swift in Sources */,
+				52BBF67B257EEF54001858AB /* MainViewController.swift in Sources */,
 				52C7884D259426BC00083F69 /* BluetoothCommands.swift in Sources */,
 				52BBF677257EEF54001858AB /* AppDelegate.swift in Sources */,
+				52023DCF2595F82E008CD560 /* ConnectingViewController.swift in Sources */,
 				52C7884525941BE300083F69 /* BluetoothCommunication.swift in Sources */,
 				52C78842259418EC00083F69 /* AccelerationJoystick.swift in Sources */,
 				52E8FFB12580C24000CBC5EF /* BluetoothCommunication+Extension.swift in Sources */,

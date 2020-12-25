@@ -13,6 +13,7 @@ var txCharacteristic : CBCharacteristic?
 var rxCharacteristic : CBCharacteristic?
 
 
+
 let BLE_Characteristic_uuid_Tx = CBUUID(string: "FFE1")//(Property = Write without response)
 let BLE_Characteristic_uuid_Rx = CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")// (Property = Read/Notify)
 let BLEService_UUID = CBUUID(string: "6e400001-b5a3-f393-e0a9-e50e24dcca9e")
@@ -38,7 +39,7 @@ extension BluetoothCommunication: CBCentralManagerDelegate{
                     self.centralManager.stopScan()
                     self.centralManager.connect(peripheral, options: nil)
                     self.peripheral = peripheral
-                
+                    isConnected = true
                 }
             }
         

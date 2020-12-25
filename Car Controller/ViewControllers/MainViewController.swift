@@ -8,7 +8,7 @@
 import UIKit
 import CoreBluetooth
 
-class ViewController: UIViewController, CommandExecutorDelegate{
+class MainViewController: UIViewController, CommandExecutorDelegate{
     
     
     

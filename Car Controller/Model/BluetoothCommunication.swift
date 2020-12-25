@@ -11,10 +11,13 @@ import CoreBluetooth
 protocol BluetoothCommunicationProtocol{
    func connectToDevice()
    func writeCommand( withCharacteristic characteristic: CBCharacteristic, withValue value: Data)
+    var isConnected: Bool {get}
 }
 
 class BluetoothCommunication: NSObject, BluetoothCommunicationProtocol{
     
+    
+    var isConnected: Bool = false
     var centralManager : CBCentralManager!
     var peripheral : CBPeripheral?
     
