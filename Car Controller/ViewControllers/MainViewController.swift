@@ -8,16 +8,13 @@
 import UIKit
 import CoreBluetooth
 
-class MainViewController: UIViewController, CommandExecutorDelegate{
+class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothConnectionDelegate{
     
     
     
-   
+
     var commandExecutor: CommandExecutor = CommandExecutor()
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
-    
-    var centralManager : CBCentralManager!
-    
     
     @IBOutlet weak var connectionLabel: UILabel!
     
@@ -38,8 +35,6 @@ class MainViewController: UIViewController, CommandExecutorDelegate{
     @IBOutlet weak var accelerationKnob: UIImageView!
     @IBOutlet weak var steerArrows: UIImageView!
     @IBOutlet weak var accelerateArrows: UIImageView!
-    
-    @IBOutlet weak var connectingIndicator: UIActivityIndicatorView!
 
     @IBOutlet weak var acceleratingView: UIView!
     @IBOutlet weak var steeringView: UIView!
@@ -70,6 +65,17 @@ class MainViewController: UIViewController, CommandExecutorDelegate{
         }
     }
     
+    func checkConnection(_ isConnected: Bool) {
+        if isConnected{
+        connectionLabel.text = "Connected"
+            self.connectionLabel.textColor = .green
+            
+        }
+        else{
+            connectionLabel.text = "Disconnected"
+                self.connectionLabel.textColor = .red
+        }
+    }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscapeRight
@@ -82,14 +88,8 @@ class MainViewController: UIViewController, CommandExecutorDelegate{
     
     
     @IBAction func connectToCar(_ sender: Any) {
-        connectingIndicator.startAnimating()
         bluetoothClient.connectToDevice()
         commandExecutor.bluetoothClient = self.bluetoothClient
-        connectingIndicator.stopAnimating()
-        
-        self.connectionLabel.text = "Connected"
-        self.connectionLabel.textColor = .green
-        self.connectButton.setTitle("Reconnect to the car", for: .normal)
     }
 
     func setupViews(){

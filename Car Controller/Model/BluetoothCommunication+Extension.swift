@@ -28,7 +28,6 @@ extension BluetoothCommunication: CBCentralManagerDelegate{
             }
             else {
                 print("Something wrong with BLE")
-                // Not on, but can have different issues
             }
         }
     
@@ -47,7 +46,9 @@ extension BluetoothCommunication: CBCentralManagerDelegate{
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
         peripheral.discoverServices(nil)
         peripheral.delegate = self
-      
+    }
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        isConnected = false
         
     }
 }

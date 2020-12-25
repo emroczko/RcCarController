@@ -29,6 +29,7 @@ class ConnectingViewController: UIViewController{
         if let vc = segue.destination as? MainViewController
         {
             vc.bluetoothClient = self.bluetoothClient
+            vc.commandExecutor = self.commandExecutor
         }
     }
     
@@ -44,7 +45,6 @@ class ConnectingViewController: UIViewController{
             if self.bluetoothClient.isConnected {
                 self.connectionLabel.text = "Connected"
                 self.connectionLabel.textColor = .green
-               
                 self.performSegue(withIdentifier: "connectSegue", sender: nil)
                 self.loadingIndicator.stopAnimating()
             }else {

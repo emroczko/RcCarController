@@ -13,11 +13,24 @@ protocol BluetoothCommunicationProtocol{
    func writeCommand( withCharacteristic characteristic: CBCharacteristic, withValue value: Data)
     var isConnected: Bool {get}
 }
+protocol BluetoothConnectionDelegate: class{
+    func checkConnection(_ isConnected : Bool)
+}
 
 class BluetoothCommunication: NSObject, BluetoothCommunicationProtocol{
     
+    weak var delegate:BluetoothConnectionDelegate?
     
-    var isConnected: Bool = false
+    var isConnected: Bool = false {
+        didSet {
+            if isConnected {
+                delegate?.checkConnection(true)
+            }
+            else {
+                delegate?.checkConnection(false)
+            }
+        }
+    }
     var centralManager : CBCentralManager!
     var peripheral : CBPeripheral?
     
