@@ -487,38 +487,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A20F62EC-0C57-434F-A0D9-4CF822AAD57B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/Model/BluetoothCommunication+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "writeCommand(withCharacteristic:withValue:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "050E4E3D-99E1-4D50-802B-9360A2D2FEC6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/Model/BluetoothCommunication+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "writeCommand(withCharacteristic:withValue:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2C1631CC-4650-4604-83D6-33888B0D7E3D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -551,22 +519,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C2DD205-CAE0-49E7-99A3-56A5E6D4B7B6"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/Model/BluetoothCommunication+Extension.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "peripheral(_:didDiscoverCharacteristicsFor:error:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "B139FAC8-6397-4901-9FCE-2FBA85DB5506"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -574,8 +526,8 @@
             filePath = "Car Controller/ViewControllers/ConnectingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -590,8 +542,8 @@
             filePath = "Car Controller/ViewControllers/ConnectingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "connectToCar(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -606,8 +558,8 @@
             filePath = "Car Controller/ViewControllers/ConnectingViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "connectToCar(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -615,187 +567,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6233FB11-5FD1-4E13-95A9-2A832FDD19D8"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/ViewControllers/LightsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "stateChanged(lights:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D0D21E24-7C10-4C53-808F-8A71C68B2F07"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/ViewControllers/LightsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "stateChanged(lights:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "94070232-FBF0-45D6-9C1D-155B8666F67E"
+            uuid = "9E5C58C3-E63F-4CE9-AE18-8250CED7C97C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Car Controller/ViewControllers/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F88ADE7-1B04-4F7B-9F54-677F6F1EF8A1"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/ViewControllers/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "unwind(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Car Controller/ViewControllers/MainViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "MainViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49 - c96f7cb05db762e6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.lightsData.getter : Car_Controller.LightsData"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "136">
-               </Location>
-               <Location
-                  uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49 - 808e6583337fd6f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.lightsData.setter : Car_Controller.LightsData"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "184">
-               </Location>
-               <Location
-                  uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49 - 1bef4a82c5dc33b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.lightsData.modify : Car_Controller.LightsData"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49 - e25487775b73b567"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.lightsData.modify : Car_Controller.LightsData with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "8">
-               </Location>
-               <Location
-                  uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49 - c6f09e5069a189c7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Car_Controller.MainViewController"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "552">
-               </Location>
-               <Location
-                  uuid = "DAE357AE-F494-45AD-8E3F-7F578E45DA49 - ae44473f6de88c99"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Car_Controller.MainViewController&gt;"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "17"
-                  endingLineNumber = "17"
-                  offsetFromSymbolStart = "528">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "237C3256-AA24-4942-96BC-9581A9A8E964"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Car Controller/ViewControllers/LightsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "LightsViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -803,79 +583,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D93623B7-93E7-4706-BA7E-7FC96A14FCC3"
-            shouldBeEnabled = "Yes"
+            uuid = "A013B5F5-0713-4A4F-885F-D469DF320068"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Car Controller/ViewControllers/MainViewController.swift"
+            filePath = "Car Controller/Model/BluetoothCommunication+Extension.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "MainViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "D93623B7-93E7-4706-BA7E-7FC96A14FCC3 - 729f6a0c21d9bf8b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.knobWidth.getter : CoreGraphics.CGFloat"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "D93623B7-93E7-4706-BA7E-7FC96A14FCC3 - c6f09e5069a18e01"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Car_Controller.MainViewController"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "660">
-               </Location>
-               <Location
-                  uuid = "D93623B7-93E7-4706-BA7E-7FC96A14FCC3 - ae44473f6de88b5f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Car_Controller.MainViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Car_Controller.MainViewController&gt;"
-                  moduleName = "Car Controller"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/erykmroczko/Documents/Studia/PMIK/RC_CarController/Car%20Controller/ViewControllers/MainViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "636">
-               </Location>
-            </Locations>
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "peripheral(_:didDiscoverCharacteristicsFor:error:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A98CF111-018F-4E69-AD92-741433254FA7"
+            uuid = "49911822-71BA-497B-81DC-ABE76E540412"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Car Controller/ViewControllers/LightsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "setupSwitches()"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "setupSteppers()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E54CAEF-35AA-4435-86D6-293410DE5161"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Car Controller/ViewControllers/LightsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "allLightsStepperValueChanged(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BA2CD258-AAC0-4FDA-AD4C-2CA07B8F9520"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Car Controller/ViewControllers/LightsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "allLightsStepperValueChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -18,9 +18,11 @@ enum Command: String{
     case stopSteering = "t"
     case stopAccelerating = "s"
     case ledOn = "ledon"
+    case allLights = "l1"
     case ledOff = "ledoff"
     case allOn = "allOn"
     case allOf = "allOff"
+    case reset = "reset"
     
 }
 

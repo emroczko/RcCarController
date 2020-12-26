@@ -37,41 +37,44 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
         return result
     }
     
-    func sendCommand(_ command: String ){
+    func sendCommand(_ command: Command ){
+        bluetoothClient.writeCommand(withCharacteristic: txCharacteristic!, withValue: Data(stringConvert(command.rawValue)))
+    }
+    func sendStringCommand(_ command: String ){
         bluetoothClient.writeCommand(withCharacteristic: txCharacteristic!, withValue: Data(stringConvert(command)))
     }
    
     func panAccEnded(_ sender: AccelerationJoystick) {
         delegate?.stopAccelerating()
-        sendCommand(Command.stopAccelerating.rawValue)
+        sendCommand(Command.stopAccelerating)
     }
     
     func accelerate(_ sender: AccelerationJoystick) {
-        sendCommand(Command.accelerate100.rawValue)
+        sendCommand(Command.accelerate100)
     }
     
     func reverse(_ sender: AccelerationJoystick) {
-        sendCommand(Command.reverse100.rawValue)
+        sendCommand(Command.reverse100)
     }
     
     func panSteerEnded(_ sender: SteeringJoystick) {
         delegate?.stopSteering()
-        sendCommand(Command.stopSteering.rawValue)
+        sendCommand(Command.stopSteering)
     }
     
     func turnLeft(_ sender: SteeringJoystick) {
-        sendCommand(Command.left.rawValue)
+        sendCommand(Command.left)
     }
     
     func turnRight(_ sender: SteeringJoystick){
-        sendCommand(Command.right.rawValue)
+        sendCommand(Command.right)
     }
     
-    func turnOnLed(){
-        sendCommand(Command.ledOn.rawValue)
+    func allLights(_ command: String){
+        sendStringCommand(command)
     }
-    func turnOffLed(){
-        sendCommand(Command.ledOff.rawValue)
+    func reset(){
+        sendCommand(Command.reset)
     }
     
     

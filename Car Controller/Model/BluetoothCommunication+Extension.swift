@@ -11,7 +11,7 @@ import CoreBluetooth
 
 var txCharacteristic : CBCharacteristic?
 var rxCharacteristic : CBCharacteristic?
-
+let reset : String = "reset"
 
 
 let BLE_Characteristic_uuid_Tx = CBUUID(string: "FFE1")//(Property = Write without response)
@@ -57,8 +57,6 @@ extension BluetoothCommunication: CBPeripheralDelegate{
 
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
-            
-            
             if ((error) != nil) {
                 print("Error discovering services: \(error!.localizedDescription)")
                 return
@@ -70,8 +68,6 @@ extension BluetoothCommunication: CBPeripheralDelegate{
             for service in services {
                 peripheral.discoverCharacteristics(nil, for: service)
             }
-            
-       
         }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
@@ -79,11 +75,9 @@ extension BluetoothCommunication: CBPeripheralDelegate{
           print("Error discovering services: \(error!.localizedDescription)")
           return
       }
-      
       guard let characteristics = service.characteristics else {
           return
       }
-    //print(BLE_Characteristic_uuid_Tx)
       for characteristic in characteristics {
           if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Rx)  {
              rxCharacteristic = characteristic
@@ -92,7 +86,7 @@ extension BluetoothCommunication: CBPeripheralDelegate{
           }
           if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx){
               txCharacteristic = characteristic
-              
+            writeCommand(withCharacteristic: characteristic, withValue: Data([UInt8](reset.utf8)))
           }
     
   }

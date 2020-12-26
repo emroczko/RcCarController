@@ -11,6 +11,8 @@ import CoreBluetooth
 
 class ConnectingViewController: UIViewController{
     
+    
+    
     // MARK: - Properties
     
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
@@ -26,8 +28,19 @@ class ConnectingViewController: UIViewController{
     {
         super.viewDidLoad()
         loadingIndicator.hidesWhenStopped = true
+       
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+        
     }
-    
+    // MARK: - Setup orientation
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .landscape
+    }
+
+    override var shouldAutorotate: Bool {
+        return true
+    }
     // MARK: - Setup segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
@@ -35,10 +48,13 @@ class ConnectingViewController: UIViewController{
         {
             vc.bluetoothClient = self.bluetoothClient
             vc.commandExecutor = self.commandExecutor
+            
         }
     }
-    
-    
+    // MARK: - reset the car when launching
+    func resetTheCar(){
+        commandExecutor.reset()
+    }
     
     // MARK: - Button method
     @IBAction func connectToCar(_ sender: Any) {
@@ -52,6 +68,7 @@ class ConnectingViewController: UIViewController{
             if self.bluetoothClient.isConnected {
                 self.connectionLabel.text = "Connected"
                 self.connectionLabel.textColor = .green
+                
                 self.performSegue(withIdentifier: "connectSegue", sender: nil)
                 self.loadingIndicator.stopAnimating()
             }else {
@@ -61,6 +78,7 @@ class ConnectingViewController: UIViewController{
                 self.connectionLabel.textColor = .red
                 }
         }
+        
         
     }
     

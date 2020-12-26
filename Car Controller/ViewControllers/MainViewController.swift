@@ -25,6 +25,7 @@ class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothCo
     var accelerationKnobView = AccelerationJoystick()
     var steeringKnobView = SteeringJoystick()
     
+    
     @IBOutlet weak var connectionLabel: UILabel!
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var steeringKnob: UIImageView!
@@ -43,18 +44,11 @@ class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothCo
         setupSteeringKnob()
         setupViews()
         
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
+        
+      
     }
     
-    // MARK: - Setup orientation
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscapeRight
-    }
-
-    override var shouldAutorotate: Bool {
-        return true
-    }
+    
     
     // MARK: - Setup segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -70,26 +64,32 @@ class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothCo
     @IBAction func unwind( _ seg: UIStoryboardSegue) {
         if let sourceViewController = seg.source as? LightsViewController {
             self.lightsData = sourceViewController.lightsData
+            
             }
     }
     // MARK: - Delegate methods
     func checkConnection(_ isConnected: Bool) {
         if isConnected{
-        connectionLabel.text = "Connected"
+            connectionLabel.text = "Connected"
             self.connectionLabel.textColor = .green
-            
         }
         else{
             connectionLabel.text = "Disconnected"
-                self.connectionLabel.textColor = .red
+            self.connectionLabel.textColor = .red
         }
     }
     
     // MARK: - Buttons methods
     
+    @IBAction func resetTheCar(_ sender: Any) {
+        resetTheCar()
+    }
+    
     @IBAction func connectToCar(_ sender: Any) {
         bluetoothClient.connectToDevice()
         commandExecutor.bluetoothClient = self.bluetoothClient
+        resetTheCar()
+        
     }
     @IBAction func lightsOptions(_ sender: Any) {
         self.performSegue(withIdentifier: "lightsSegue", sender: self)
@@ -137,6 +137,14 @@ class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothCo
             self.steeringKnobView.frame.origin = self.originalSteerPositionCGPoint
         })
     }
+    
+    // MARK: - reset the car
+    func resetTheCar(){
+        commandExecutor.reset()
+        let temp : LightsData = LightsData()
+        self.lightsData = temp
+    }
+    
     
 }
 
