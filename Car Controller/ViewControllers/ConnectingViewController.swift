@@ -11,6 +11,8 @@ import CoreBluetooth
 
 class ConnectingViewController: UIViewController{
     
+    // MARK: - Properties
+    
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var connectionLabel: UILabel!
     
@@ -18,12 +20,15 @@ class ConnectingViewController: UIViewController{
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
     var centralManager : CBCentralManager!
     
+    // MARK: - View lifecycle
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         loadingIndicator.hidesWhenStopped = true
     }
     
+    // MARK: - Setup segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         if let vc = segue.destination as? MainViewController
@@ -34,6 +39,8 @@ class ConnectingViewController: UIViewController{
     }
     
     
+    
+    // MARK: - Button method
     @IBAction func connectToCar(_ sender: Any) {
         loadingIndicator.startAnimating()
         bluetoothClient.connectToDevice()

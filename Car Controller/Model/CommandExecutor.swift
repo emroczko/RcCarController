@@ -14,17 +14,23 @@ protocol CommandExecutorDelegate{
 }
 class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     
+    // MARK: - Properties
+    
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
     var delegate : CommandExecutorDelegate?
     
     var accelerationKnob = AccelerationJoystick()
     var steeringKnob = SteeringJoystick()
     
+    // MARK: - Init
+    
     init(){
         accelerationKnob.delegate = self
         steeringKnob.delegate = self
     }
   
+    // MARK: - Methods
+    
     func stringConvert(_ str : String) -> [UInt8]{
 
         let result:[UInt8] = [UInt8](str.utf8)
@@ -56,6 +62,7 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     func turnLeft(_ sender: SteeringJoystick) {
         sendCommand(Command.left.rawValue)
     }
+    
     func turnRight(_ sender: SteeringJoystick){
         sendCommand(Command.right.rawValue)
     }
