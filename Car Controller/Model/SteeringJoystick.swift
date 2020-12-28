@@ -95,6 +95,9 @@ class SteeringJoystick: UIView {
         lastLocation = self.center
         originalPosition = self.center
     }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        delegate?.panSteerEnded(self)
+    }
     
     func moveTo(_ point: CGPoint) {
         self.frame.origin = point

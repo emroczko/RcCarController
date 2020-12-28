@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STM32" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gai-hb-YvZ">
-                                <rect key="frame" x="377" y="122" width="144.5" height="50.5"/>
+                                <rect key="frame" x="376" y="91" width="144.5" height="50.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -35,12 +35,6 @@
                                     <action selector="connectToCar:" destination="V5n-ld-G2G" eventType="touchUpInside" id="oHM-nw-RNQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Controller" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="827-rn-qHX">
-                                <rect key="frame" x="305.5" y="171.5" width="285" height="50.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disconnected" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-Qy-DKl">
                                 <rect key="frame" x="389.5" y="293.5" width="117" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
@@ -50,21 +44,27 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="4rx-jv-xV9">
                                 <rect key="frame" x="438" y="336" width="20" height="20"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car Controller" textAlignment="center" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="827-rn-qHX">
+                                <rect key="frame" x="306" y="134" width="285" height="50.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="42"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J0m-Ub-acl"/>
                         <color key="backgroundColor" red="0.45601695780000001" green="0.95341879129999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tca-zH-VjR" firstAttribute="top" secondItem="827-rn-qHX" secondAttribute="bottom" priority="500" constant="23" id="8lf-AL-C03"/>
+                            <constraint firstItem="tca-zH-VjR" firstAttribute="top" secondItem="827-rn-qHX" secondAttribute="bottom" priority="500" constant="60.5" id="8lf-AL-C03"/>
                             <constraint firstItem="tca-zH-VjR" firstAttribute="centerX" secondItem="J0m-Ub-acl" secondAttribute="centerX" id="8vj-be-X6Y"/>
                             <constraint firstItem="8bY-Qy-DKl" firstAttribute="centerX" secondItem="J0m-Ub-acl" secondAttribute="centerX" id="975-HR-RaU"/>
-                            <constraint firstItem="Gai-hb-YvZ" firstAttribute="centerX" secondItem="J0m-Ub-acl" secondAttribute="centerX" constant="1.25" id="REe-oT-fqO"/>
+                            <constraint firstItem="Gai-hb-YvZ" firstAttribute="centerX" secondItem="J0m-Ub-acl" secondAttribute="centerX" constant="0.25" id="REe-oT-fqO"/>
                             <constraint firstItem="8bY-Qy-DKl" firstAttribute="top" secondItem="tca-zH-VjR" secondAttribute="bottom" constant="8" symbolic="YES" id="UC4-uH-yQr"/>
                             <constraint firstItem="4rx-jv-xV9" firstAttribute="top" secondItem="8bY-Qy-DKl" secondAttribute="bottom" constant="21.5" id="WTB-El-wTQ"/>
                             <constraint firstItem="827-rn-qHX" firstAttribute="centerX" secondItem="J0m-Ub-acl" secondAttribute="centerX" id="XAl-Xe-1fQ"/>
-                            <constraint firstItem="Gai-hb-YvZ" firstAttribute="top" secondItem="J0m-Ub-acl" secondAttribute="top" constant="122" id="a5m-Bf-roF"/>
+                            <constraint firstItem="Gai-hb-YvZ" firstAttribute="top" secondItem="J0m-Ub-acl" secondAttribute="top" constant="91" id="a5m-Bf-roF"/>
                             <constraint firstItem="J0m-Ub-acl" firstAttribute="bottom" secondItem="8bY-Qy-DKl" secondAttribute="bottom" constant="78.5" id="bhF-Z2-0MZ"/>
                             <constraint firstItem="4rx-jv-xV9" firstAttribute="centerX" secondItem="J0m-Ub-acl" secondAttribute="centerX" id="fPi-wT-Xnn"/>
-                            <constraint firstItem="827-rn-qHX" firstAttribute="top" secondItem="Gai-hb-YvZ" secondAttribute="bottom" constant="-1" id="yLk-k3-SUy"/>
+                            <constraint firstItem="827-rn-qHX" firstAttribute="top" secondItem="Gai-hb-YvZ" secondAttribute="bottom" constant="-7.5" id="yLk-k3-SUy"/>
                         </constraints>
                     </view>
                     <connections>
@@ -86,11 +86,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="White-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="UL5-4I-eP2" userLabel="Steering Knob">
-                                <rect key="frame" x="69" y="143" width="240" height="128"/>
+                                <rect key="frame" x="-1291" y="143" width="1600" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="White-Circle" translatesAutoresizingMaskIntoConstraints="NO" id="4Np-d7-4ei">
-                                <rect key="frame" x="624" y="143" width="240" height="128"/>
+                                <rect key="frame" x="624" y="143" width="1600" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2P3-3Q-mTu">
@@ -197,13 +197,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" stepValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="q4I-of-Z2N">
-                                <rect key="frame" x="703" y="72" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="allLightsStepperValueChanged:" destination="6Ok-JH-Sxg" eventType="valueChanged" id="SSC-de-uDA"/>
-                                </connections>
-                            </stepper>
                             <button opaque="NO" clipsSubviews="YES" alpha="0.85000002384185791" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1A-S0-LoK">
                                 <rect key="frame" x="309" y="330" width="279" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -217,114 +210,109 @@
                                     <action selector="back:" destination="6Ok-JH-Sxg" eventType="touchUpInside" id="bI7-sB-IMe"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All Lights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKS-cP-m6C">
-                                <rect key="frame" x="113" y="70" width="105" height="37"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" stepValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="Rar-jN-q0l">
+                                <rect key="frame" x="705" y="70" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brightness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfO-PW-7O8">
-                                <rect key="frame" x="561" y="69" width="122" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
-                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="igy-ch-sDr">
-                                <rect key="frame" x="226" y="72" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Rar-jN-q0l">
-                                <rect key="frame" x="703" y="115" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="frontLightsStepperValueChanged:" destination="6Ok-JH-Sxg" eventType="valueChanged" id="OH6-jE-NzM"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Front Lights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K6d-iV-0Oz">
-                                <rect key="frame" x="83" y="111" width="135" height="37"/>
+                                <rect key="frame" x="85" y="66" width="135" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brightness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hu9-Ld-tgR">
-                                <rect key="frame" x="561" y="111" width="122" height="37"/>
+                                <rect key="frame" x="563" y="66" width="122" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="0AM-uc-y1N">
-                                <rect key="frame" x="226" y="114" width="49" height="31"/>
+                                <rect key="frame" x="228" y="69" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-lo-Z9b">
-                                <rect key="frame" x="703" y="156" width="94" height="32"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1000" stepValue="250" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-lo-Z9b">
+                                <rect key="frame" x="705" y="111" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="rearLightsStepperValueChanged:" destination="6Ok-JH-Sxg" eventType="valueChanged" id="auh-vr-XHC"/>
+                                </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rear Lights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kn-og-Uli">
-                                <rect key="frame" x="91" y="154" width="127" height="37"/>
+                                <rect key="frame" x="93" y="109" width="127" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Brightness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3R-Zd-sG1">
-                                <rect key="frame" x="561" y="153" width="122" height="37"/>
+                                <rect key="frame" x="563" y="108" width="122" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="kct-cG-XsE">
-                                <rect key="frame" x="226" y="156" width="49" height="31"/>
+                                <rect key="frame" x="228" y="111" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Yiw-xR-zUm">
-                                <rect key="frame" x="703" y="198" width="94" height="32"/>
+                                <rect key="frame" x="705" y="153" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Body Lights" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eB4-Ma-evb">
-                                <rect key="frame" x="83" y="195" width="135" height="37"/>
+                                <rect key="frame" x="85" y="150" width="135" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Red" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmR-Kf-ghc">
-                                <rect key="frame" x="561" y="195" width="122" height="37"/>
+                                <rect key="frame" x="563" y="150" width="122" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gsj-hY-j6q">
-                                <rect key="frame" x="703" y="241" width="94" height="32"/>
+                                <rect key="frame" x="705" y="196" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nud-cS-yMp">
-                                <rect key="frame" x="561" y="238" width="122" height="37"/>
+                                <rect key="frame" x="563" y="193" width="122" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" preferredStyle="sliding" translatesAutoresizingMaskIntoConstraints="NO" id="MAA-KD-3Oy">
-                                <rect key="frame" x="226" y="198" width="49" height="31"/>
+                                <rect key="frame" x="228" y="153" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="PMe-ux-Ur9">
-                                <rect key="frame" x="703" y="284" width="94" height="32"/>
+                                <rect key="frame" x="705" y="239" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rjk-Lo-Dmq">
-                                <rect key="frame" x="561" y="281" width="122" height="37"/>
+                                <rect key="frame" x="563" y="236" width="122" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="23"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wE-cu-qSa">
-                                <rect key="frame" x="805" y="69" width="77" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVV-1H-Gbh">
+                                <rect key="frame" x="807" y="70" width="77" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oEN-5l-eT0">
+                                <rect key="frame" x="807" y="109" width="77" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -335,9 +323,12 @@
                         <color key="backgroundColor" red="0.45601695780000001" green="0.95341879129999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="allLightsPercent" destination="7wE-cu-qSa" id="zym-FR-TE0"/>
-                        <outlet property="allLightsStepper" destination="q4I-of-Z2N" id="ieH-NA-pa9"/>
-                        <outlet property="allLightsSwitch" destination="igy-ch-sDr" id="rqU-5T-EFe"/>
+                        <outlet property="frontLightsPercent" destination="gVV-1H-Gbh" id="nTb-Im-EPP"/>
+                        <outlet property="frontLightsStepper" destination="Rar-jN-q0l" id="Ksn-pM-b51"/>
+                        <outlet property="frontLightsSwitch" destination="0AM-uc-y1N" id="2FF-5e-OLn"/>
+                        <outlet property="rearLightsPercent" destination="oEN-5l-eT0" id="I4b-Q5-zom"/>
+                        <outlet property="rearLightsStepper" destination="fiK-lo-Z9b" id="7NK-EH-AvZ"/>
+                        <outlet property="rearLightsSwitch" destination="kct-cG-XsE" id="s3o-Pl-2SH"/>
                         <segue destination="8nk-Eo-fUM" kind="unwind" identifier="unwindToMainVC" unwindAction="unwind:" id="tKx-42-7Jt"/>
                     </connections>
                 </viewController>

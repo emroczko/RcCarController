@@ -9,6 +9,6 @@ import Foundation
 
 
 struct LightsData{
-    var switchesData : [String: Bool] = ["allLights" : false]
-    var steppersData : [String: Int] = ["allLights" : 0]
+    var switchesData : [String: Bool] = ["rearLights" : false, "frontLights" : false]
+    var steppersData : [String: Int] = ["rearLights" : 0, "frontLights" : 0]
 }

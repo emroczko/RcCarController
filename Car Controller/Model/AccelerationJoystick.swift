@@ -8,8 +8,11 @@ import UIKit
 
 protocol AccelerationDelegate {
     func panAccEnded(_ sender: AccelerationJoystick)
+    
     func accelerate(_ sender: AccelerationJoystick)
+    func accelerate400(_ sender: AccelerationJoystick)
     func reverse(_ sender: AccelerationJoystick)
+    func reverse400(_ sender: AccelerationJoystick)
 }
 
 class AccelerationJoystick: UIView {
@@ -42,7 +45,14 @@ class AccelerationJoystick: UIView {
         let translation = recognizer.translation(in: self.superview)
 
         if (hypot(translation.x, translation.y) < knobMaxDistanceFromOriginalPosition) {
+             if(translation.y < 0){
+                 delegate?.accelerate400(self)
+             }
+             else{
+                 delegate?.reverse400(self)
+             }
             self.center = CGPoint(x: lastLocation.x , y: lastLocation.y + translation.y)
+           
         } else{
             self.center = getNewCoords(translation)
             //delegate?.accelerate(self)
@@ -96,6 +106,9 @@ class AccelerationJoystick: UIView {
         // Remember original location
         lastLocation = self.center
         originalPosition = self.center
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        delegate?.panAccEnded(self)
     }
     
     func moveTo(_ point: CGPoint) {

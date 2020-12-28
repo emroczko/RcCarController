@@ -40,12 +40,12 @@ class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothCo
     override func viewDidLoad() {
         super.viewDidLoad()
         commandExecutor.delegate = self
+        setupViews()
         setupAccelerationKnob()
         setupSteeringKnob()
-        setupViews()
-        
-        
       
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     
@@ -136,6 +136,8 @@ class MainViewController: UIViewController, CommandExecutorDelegate, BluetoothCo
         SteeringJoystick.animate(withDuration: 0.1, animations: {
             self.steeringKnobView.frame.origin = self.originalSteerPositionCGPoint
         })
+        
+        
     }
     
     // MARK: - reset the car

@@ -14,6 +14,8 @@ protocol CommandExecutorDelegate{
 }
 class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     
+    
+    
     // MARK: - Properties
     
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
@@ -48,13 +50,23 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
         delegate?.stopAccelerating()
         sendCommand(Command.stopAccelerating)
     }
+    func stopSteering(){
+        sendCommand(Command.stopSteering)
+    }
     
     func accelerate(_ sender: AccelerationJoystick) {
         sendCommand(Command.accelerate100)
     }
+    func accelerate400(_ sender: AccelerationJoystick) {
+        sendCommand(Command.accelerate50)
+    }
+    
     
     func reverse(_ sender: AccelerationJoystick) {
         sendCommand(Command.reverse100)
+    }
+    func reverse400(_ sender: AccelerationJoystick) {
+        sendCommand(Command.reverse50)
     }
     
     func panSteerEnded(_ sender: SteeringJoystick) {
@@ -70,7 +82,10 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
         sendCommand(Command.right)
     }
     
-    func allLights(_ command: String){
+    func rearLights(_ command: String){
+        sendStringCommand(command)
+    }
+    func frontLights(_ command: String){
         sendStringCommand(command)
     }
     func reset(){

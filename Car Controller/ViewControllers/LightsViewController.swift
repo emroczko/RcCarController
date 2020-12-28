@@ -13,9 +13,16 @@ class LightsViewController: UIViewController{
     // MARK: - Properties
     
    
-    @IBOutlet weak var allLightsSwitch: UISwitch!
-    @IBOutlet weak var allLightsPercent: UILabel!
-    @IBOutlet weak var allLightsStepper: UIStepper!
+
+    
+    @IBOutlet weak var frontLightsSwitch: UISwitch!
+    @IBOutlet weak var frontLightsPercent: UILabel!
+    @IBOutlet weak var frontLightsStepper: UIStepper!
+    
+    @IBOutlet weak var rearLightsSwitch: UISwitch!
+    @IBOutlet weak var rearLightsPercent: UILabel!
+    @IBOutlet weak var rearLightsStepper: UIStepper!
+    
     
     
     var commandExecutor: CommandExecutor = CommandExecutor()
@@ -29,8 +36,10 @@ class LightsViewController: UIViewController{
         super.viewDidLoad()
         setupSwitches()
         setupSteppers()
-        allLightsSwitch.addTarget(self, action: #selector(stateChanged), for: .valueChanged)
+       
         
+        frontLightsSwitch.addTarget(self, action: #selector(frontLightsSwitched), for: .valueChanged)
+        rearLightsSwitch.addTarget(self, action: #selector(rearLightsSwitched), for: .valueChanged)
      
     }
    
@@ -38,11 +47,16 @@ class LightsViewController: UIViewController{
     // MARK: - Setup switches and steppers
     
     func setupSwitches(){
-        allLightsSwitch.isOn = lightsData.switchesData["allLights"] ?? false
+        frontLightsSwitch.isOn = lightsData.switchesData["frontLights"] ?? false
+        rearLightsSwitch.isOn = lightsData.switchesData["rearLights"] ?? false
+        
     }
     func setupSteppers(){
-        allLightsStepper.value = Double(lightsData.steppersData["allLights"] ?? 0)*10
-        allLightsPercent.text = String(lightsData.steppersData["allLights"] ?? 0)+"%"
+        
+        frontLightsStepper.value = Double(lightsData.steppersData["frontLights"] ?? 0)*10
+        frontLightsPercent.text = String(lightsData.steppersData["frontLights"] ?? 0)+"%"
+        rearLightsStepper.value = Double(lightsData.steppersData["rearLights"] ?? 0)*10
+        rearLightsPercent.text = String(lightsData.steppersData["rearLights"] ?? 0)+"%"
     }
     // MARK: - Unwind Segue
     
@@ -61,37 +75,64 @@ class LightsViewController: UIViewController{
     
     // MARK: - Steppers methods
     
-    @IBAction func allLightsStepperValueChanged(_ sender: UIStepper) {
-        allLightsPercent.text = String(Int(sender.value/10)) + "%"
-        commandExecutor.allLights(Command.allLights.rawValue+String(sender.value))
+
+    @IBAction func frontLightsStepperValueChanged(_ sender: UIStepper) {
+        frontLightsPercent.text = String(Int(sender.value/10)) + "%"
+        commandExecutor.frontLights(Command.frontLights.rawValue+String(sender.value))
         
         switch sender.value {
-            case 0: allLightsSwitch.isOn = false
-            default: allLightsSwitch.isOn = true
+            case 0: frontLightsSwitch.isOn = false
+            default: frontLightsSwitch.isOn = true
         }
-        lightsData.steppersData.updateValue(Int(sender.value)/10, forKey: "allLights")
-        lightsData.switchesData.updateValue(allLightsSwitch.isOn, forKey: "allLights")
-        
+        lightsData.steppersData.updateValue(Int(sender.value)/10, forKey: "frontLights")
+        lightsData.switchesData.updateValue(frontLightsSwitch.isOn, forKey: "frontLights")
     }
+    @IBAction func rearLightsStepperValueChanged(_ sender: UIStepper) {
+        rearLightsPercent.text = String(Int(sender.value/10)) + "%"
+        commandExecutor.rearLights(Command.rearLights.rawValue+String(sender.value))
+        
+        switch sender.value {
+            case 0: rearLightsSwitch.isOn = false
+            default: rearLightsSwitch.isOn = true
+        }
+        lightsData.steppersData.updateValue(Int(sender.value)/10, forKey: "rearLights")
+        lightsData.switchesData.updateValue(rearLightsSwitch.isOn, forKey: "rearLights")
+    }
+    
+    
     // MARK: - Switches methods
     
-    @objc func stateChanged(lights: UISwitch) {
+    
+    @objc func frontLightsSwitched(lights: UISwitch) {
         
         if lights.isOn {
-            commandExecutor.allLights(Command.allLights.rawValue+"250")
-            lightsData.switchesData.updateValue(true, forKey: "allLights")
-            allLightsStepper.value = 250
-            allLightsPercent.text = "25%"
-            lightsData.steppersData.updateValue(25, forKey: "allLights")
+            frontLightsHelper(25, true)
         } else {
-            commandExecutor.allLights(Command.allLights.rawValue+"0")
-            lightsData.switchesData.updateValue(false, forKey: "allLights")
-            allLightsStepper.value = 0
-            allLightsPercent.text = "0%"
-            lightsData.steppersData.updateValue(0, forKey: "allLights")
+            frontLightsHelper(0, false)
         }
+    }
+    @objc func rearLightsSwitched(lights: UISwitch) {
         
+        if lights.isOn {
+            rearLightsHelper(25, true)
+        } else {
+            rearLightsHelper(0, false)
+        }
     }
     
-    // MARK: - Stepper methods
+    // MARK: - Helper Methods
+    func frontLightsHelper(_ value : Int, _ update : Bool){
+        commandExecutor.frontLights(Command.frontLights.rawValue+String(value*10))
+        lightsData.switchesData.updateValue(update, forKey: "frontLights")
+        frontLightsStepper.value = Double(value*10)
+        frontLightsPercent.text = String(value)+"%"
+        lightsData.steppersData.updateValue(value, forKey: "frontLights")
+    }
+    func rearLightsHelper(_ value : Int, _ update : Bool){
+        commandExecutor.rearLights(Command.rearLights.rawValue+String(value*10))
+        lightsData.switchesData.updateValue(update, forKey: "rearLights")
+        rearLightsStepper.value = Double(value*10)
+        rearLightsPercent.text = String(value)+"%"
+        lightsData.steppersData.updateValue(value, forKey: "rearLights")
+    }
 }

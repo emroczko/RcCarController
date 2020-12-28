@@ -29,18 +29,24 @@ class ConnectingViewController: UIViewController{
         super.viewDidLoad()
         loadingIndicator.hidesWhenStopped = true
        
-        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-            UIDevice.current.setValue(value, forKey: "orientation")
         
+        let value = UIInterfaceOrientation.landscapeRight.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
     }
+    
     // MARK: - Setup orientation
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .landscape
+        get{
+            return .landscapeLeft
+        }
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
     }
+    
+
+
     // MARK: - Setup segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
