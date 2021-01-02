@@ -15,7 +15,6 @@ protocol CommandExecutorDelegate{
 class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     
     
-    
     // MARK: - Properties
     
     var bluetoothClient: BluetoothCommunicationProtocol = BluetoothCommunication()
@@ -60,7 +59,6 @@ class CommandExecutor: AccelerationDelegate, SteeringDelegate{
     func accelerate400(_ sender: AccelerationJoystick) {
         sendCommand(Command.accelerate50)
     }
-    
     
     func reverse(_ sender: AccelerationJoystick) {
         sendCommand(Command.reverse100)

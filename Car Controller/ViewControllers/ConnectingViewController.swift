@@ -74,21 +74,14 @@ class ConnectingViewController: UIViewController{
             if self.bluetoothClient.isConnected {
                 self.connectionLabel.text = "Connected"
                 self.connectionLabel.textColor = .green
-                
                 self.performSegue(withIdentifier: "connectSegue", sender: nil)
                 self.loadingIndicator.stopAnimating()
-            }else {
-               
+            }
+            else{
                 self.loadingIndicator.stopAnimating()
                 self.connectionLabel.text = "Can't connect to device. Try again!"
                 self.connectionLabel.textColor = .red
-                }
+            }
         }
-        
-        
     }
-    
-    
-    
-    
 }

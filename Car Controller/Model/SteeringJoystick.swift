@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol SteeringDelegate {
     func panSteerEnded(_ sender: SteeringJoystick)
     func turnLeft(_ sender: SteeringJoystick)
@@ -15,17 +16,17 @@ protocol SteeringDelegate {
 
 class SteeringJoystick: UIView {
 
+    // MARK: - Properties
     var delegate: SteeringDelegate?
     var lastLocation = CGPoint(x: 0, y: 0)
     var originalPosition = CGPoint()
     private let knobMaxDistanceFromOriginalPosition = CGFloat(60)
-//    private var totalTranslationX = CGFloat(0.0)
-//    private var totalTranslationY = CGFloat(0.0)
+
     
+    // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        // Initialization code
         let panRecognizer = UIPanGestureRecognizer(target:self, action:#selector(SteeringJoystick.detectPan(_:)))
         self.gestureRecognizers = [panRecognizer]
         
@@ -39,6 +40,7 @@ class SteeringJoystick: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+   // MARK: - Touch methods
     @objc func detectPan(_ recognizer:UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.superview)
 
@@ -56,49 +58,35 @@ class SteeringJoystick: UIView {
         
         if (recognizer.state == .ended) {
             delegate?.panSteerEnded(self)
-            
         }
    
     }
     
-    func getNewCoords(_ translation: CGPoint) -> CGPoint {
-        let a2 = translation.x
-        let b2 = translation.y
-        let d1 = knobMaxDistanceFromOriginalPosition
-        var a1 = d1 * sin(atan(a2 / b2))
-        var b1 = d1 * cos(atan(a2 / b2))
-        
-        // the following statement deals the sign uncertainty after the trig functions
-        if translation.x > 0 {
-            if translation.y < 0 {
-                a1 *= -1
-                b1 *= -1
-            }
-        } else {
-            if (translation.y < 0) {
-                a1 *= -1
-                b1 *= -1
-            }
-        }
-        
-        let x = originalPosition.x + a1
-        let y = originalPosition.y
-
-        return CGPoint(x: x, y: y)
-    }
-    
     override func touchesBegan(_ touches: (Set<UITouch>?), with event: UIEvent!) {
-        // Promote the touched view
         self.superview?.bringSubviewToFront(self)
-        
-        // Remember original location
         lastLocation = self.center
         originalPosition = self.center
     }
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         delegate?.panSteerEnded(self)
     }
     
+   
+    
+    // MARK: - Methods
+    
+    func getNewCoords(_ translation: CGPoint) -> CGPoint {
+        
+        var a = knobMaxDistanceFromOriginalPosition * sin(atan(translation.x / translation.y))
+        
+        if (translation.y < 0) {
+            a *= -1
+        }
+        
+        return CGPoint(x: originalPosition.x + a, y: originalPosition.y)
+    }
+
     func moveTo(_ point: CGPoint) {
         self.frame.origin = point
     }

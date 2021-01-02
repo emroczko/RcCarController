@@ -20,7 +20,6 @@ enum Command: String{
     case rearLights = "rear"
     case frontLights = "front"
     case reset = "reset"
-    
 }
 
 

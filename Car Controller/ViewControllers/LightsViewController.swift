@@ -12,9 +12,6 @@ class LightsViewController: UIViewController{
     
     // MARK: - Properties
     
-   
-
-    
     @IBOutlet weak var frontLightsSwitch: UISwitch!
     @IBOutlet weak var frontLightsPercent: UILabel!
     @IBOutlet weak var frontLightsStepper: UIStepper!
@@ -37,10 +34,8 @@ class LightsViewController: UIViewController{
         setupSwitches()
         setupSteppers()
        
-        
         frontLightsSwitch.addTarget(self, action: #selector(frontLightsSwitched), for: .valueChanged)
         rearLightsSwitch.addTarget(self, action: #selector(rearLightsSwitched), for: .valueChanged)
-     
     }
    
     

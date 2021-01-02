@@ -8,18 +8,23 @@
 import Foundation
 import CoreBluetooth
 
+
 protocol BluetoothCommunicationProtocol{
    func connectToDevice()
    func writeCommand( withCharacteristic characteristic: CBCharacteristic, withValue value: Data)
     var isConnected: Bool {get}
 }
+
+
 protocol BluetoothConnectionDelegate: class{
     func checkConnection(_ isConnected : Bool)
 }
 
+
 class BluetoothCommunication: NSObject, BluetoothCommunicationProtocol{
     
-    weak var delegate:BluetoothConnectionDelegate?
+    
+    // MARK: - Properties for delegation
     
     var isConnected: Bool = false {
         didSet {
@@ -31,11 +36,13 @@ class BluetoothCommunication: NSObject, BluetoothCommunicationProtocol{
             }
         }
     }
+    
+    // MARK: - Properties
+    weak var delegate:BluetoothConnectionDelegate?
     var centralManager : CBCentralManager!
     var peripheral : CBPeripheral?
     
-    
-    
+    // MARK: - Methods
     func connectToDevice(){
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
