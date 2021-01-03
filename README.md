@@ -16,9 +16,9 @@ The app uses Swift and CoreBluetooth.
 I designed it as an app only for iPhone 11 (constraints for two view controllers doesn't exist yet) and only for MLT-BT05 but in the future I am going to design it for working with more devices and modules. 
 
 ## Screenshots
-![Launch screenshot](./Screenshots/screenshot1.png)
-![Main screenshot](./Screenshots/screenshot2.png)
-![Lights screenshot](./Screenshots/screenshot3.png)
+![Launch screenshot](Screenshots/screenshot1.PNG)
+![Main screenshot](Screenshots/screenshot2.PNG)
+![Lights screenshot](Screenshots/screenshot3.PNG)
 
 ## Technologies
 * Swift - 5.0
